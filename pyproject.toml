@@ -1,0 +1,42 @@
+[project]
+name = "avendesora-sway-utilities"
+version = "0.0"
+description = "Utilities required for Avendesora to be compatible with SwayWM"
+readme = "README.rst"
+keywords = ["avendesora", "swaywm"]
+authors = [
+    {name = "Ken Kundert"},
+]
+requires-python = ">=3.6"
+dependencies = [
+    "docopt",
+    "inform",
+    "shlib",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    # "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+clear-clipboard = "avendesora_sway_utilities.clear_clipboard:main"
+get-window-title = "avendesora_sway_utilities.get_window_title:main"
+send-keystrokes = "avendesora_sway_utilities.send_keystrokes:main"
+copy-to-clipboard = "avendesora_sway_utilities.copy_to_clipboard:main"
+send-mouse-click = "avendesora_sway_utilities.send_mouse_click:main"
+
+[project.urls]
+homepage = "https://github.com/kenkundert/avendesora-sway-utilities"
+documentation = "https://github.com/KenKundert/avendesora-sway-utilities/blob/master/README.rst"
+repository = "https://github.com/kenkundert/avendesora-sway-utilities"
+changelog = "https://github.com/KenKundert/avendesora-sway-utilities/blob/master/CHANGELOG.rst"
+
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"

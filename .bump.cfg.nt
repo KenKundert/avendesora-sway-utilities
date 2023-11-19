@@ -1,0 +1,33 @@
+major: 0
+minor: 0
+patch: 0
+revision: 0
+type: release
+style: python
+files:
+    avendesora_sway_utilities/clear_clipboard.py:
+        version: __version__
+        date: __released__
+
+    avendesora_sway_utilities/get_window_title.py:
+        version: __version__
+        date: __released__
+
+    avendesora_sway_utilities/send_keystrokes.py:
+        version: __version__
+        date: __released__
+
+    avendesora_sway_utilities/copy_to_clipboard.py:
+        version: __version__
+        date: __released__
+
+    avendesora_sway_utilities/send_mouse_click.py:
+        version: __version__
+        date: __released__
+
+    pyproject.toml:
+        version: version
+
+    README.rst:
+        version: Version
+        date: Released

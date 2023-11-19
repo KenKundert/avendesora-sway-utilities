@@ -24,7 +24,6 @@ set_prefs(use_inform=True)
 import json
 
 # GLOBALS {{{1
-ydotool_cmd = 'ydotool type'.split()
 __version__ = '0.0'
 __released__ = '2023-11-18'
 
@@ -33,14 +32,16 @@ def main():
     cmdline = docopt(__doc__, version=__version__)
     text = cmdline['<text>']
     delay = cmdline['--delay']
+    ydotool_cmd = 'ydotool type'.split()
+    with open('/home/ken/keystrokes', 'a') as f:
+        f.write(f"TEXT: ‘{text}’, DELAY: {delay}\n")
 
     if delay:
         ydotool_cmd += ['--key-delay', delay]
-    ydotool_cmd += [text]
 
     try:
-        ydotool = Run(ydotool_cmd, 'sOEW')
+        ydotool = Run(ydotool_cmd + [text], 'sOEW')
     except Error as e:
-        e.terminate(codicil=e.stdout)
+        e.terminate(culprit=ydotool_cmd[0], codicil=e.stdout)
     except KeyboardInterrupt:
         pass
